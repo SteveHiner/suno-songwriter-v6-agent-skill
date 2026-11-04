@@ -29,6 +29,7 @@ Browseable docs live at [regiellis.github.io/suno-songwriter-agent-skill](https:
 - Reference-lyrics transformation without copying the source too closely
 - Songwriting frameworks including structure, Rule of 3, and 80/20 hook prioritization
 - Individual audio samples and sound effects (Suno Sounds)
+- Spoken narration over music with Suno Speech (beta), and handing finished packages to the official Suno MCP connector when one is available
 - Cover art and animated (looping-video) covers via Suno's Generate Cover Art / Animate tools (text-to-image, text-to-video, image-to-video)
 - Reusable artist personas and cohesive album/EP planning
 - Portable prompts for other AI music tools

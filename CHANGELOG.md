@@ -4,6 +4,17 @@
 
 ### Added
 
+- Verified against Suno's own pages, read directly on 2026-11-04: the v6 FAQ, Current Models, What's New in v6, Voices, and Custom Models help articles, the v6 announcement, and the full release notes.
+- `references/suno-speech.md` and a `Title` / `Script` / `Voice` / `Music` output for Speech (beta), the 2026-10-01 mode that generates narration and its soundtrack together, with routing between Speech and `[Spoken]` sections in songs.
+- Suno MCP (beta, 2026-10-28) guidance in `SKILL.md`: submit a finished package only when a Suno connector is actually available and the credit spend is confirmed; otherwise return text and never claim generation.
+- Suno's own v6 example requests (plain-language section edits, mashups, sample-and-isolate, vibe, multimodal, single-lyric edits) as phrasing models in the controls reference.
+- Later Studio releases and the Studio Chat assistant, album publishing and team workspaces, and regression cases `MD15`-`MD17`.
+
+### Fixed
+
+- Custom Models: Suno's What's New page states they fine-tune v6, so removed the claim that the base was unconfirmed. Recorded that the 2026-10-15 release notes made them shareable on Premier, superseding the help article's "private".
+- Voices: updated to the current article (15 seconds to 4 minutes of audio, best 2 minutes chosen, voice from a library song, select in the model dropdown, keep Audio Influence high) and to free-plan availability from 2026-08-07.
+
 - A `What Changed From v5.5` table in `references/suno-v6-controls.md`, from a 2026-11-04 survey of Suno's v6 pages and community v6 test reports: models, length, connected-language Style prompts, Variety rewriting, take variance, section cues, plain-language edits, multimodal inputs, Voices, Max Mode, and training-data provenance. Documented and reported items are labeled separately.
 - `v6 Section Cues` in `references/suno-meta-tags.md`: v6 reportedly acts on short delivery, language, and energy direction inside a section header (`[Bridge | whispered, in French]`). The pipe form is now accepted alongside the hyphen form, with guidance to mirror essential changes in Style and to avoid coined tag syntax, which is reported to be dropped.
 - Community-reported v6 slider defaults (Weirdness 50, Style Influence 50, Audio Influence 25), the five Variety stops with per-model defaults now reported by several guides, and a 54-take test showing Variety Off preserved the Style text on 52 of 54 takes while Normal rewrote it every time.
