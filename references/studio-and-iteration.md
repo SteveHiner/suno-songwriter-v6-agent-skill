@@ -8,7 +8,7 @@ Suno returns two variations per generation. Treat the first run as "pick the str
 
 When a prompt is close but not landing, change **one** lever at a time between runs: the prompt, or, when exposed, Weirdness, Style Influence, or Audio Influence (see `references/suno-v6-controls.md` § Troubleshooting).
 
-Set Variety to 0 when comparing exact Style text. Suno documents that Variety can rewrite Styles; its per-model defaults are unverified. Hold the source, model, visible controls, and personalization constant. Generation remains stochastic at 0, so a better single take does not prove the prompt change caused the improvement. Compare both candidates and repeat only when the decision warrants the credit cost.
+Set Variety to 0 when comparing exact Style text. Suno documents that Variety can rewrite Styles; community tests report it defaults to Normal on `v6` and rewrites the Style on every take there, while Off kept it intact on 52 of 54 takes. v6 testers also report that the two takes of one generation can differ more than a deliberate prompt edit, so listen to both before judging a change. Hold the source, model, visible controls, and personalization constant. Generation remains stochastic at 0, so a better single take does not prove the prompt change caused the improvement. Compare both candidates and repeat only when the decision warrants the credit cost.
 
 ## Extend
 

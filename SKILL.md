@@ -1,12 +1,12 @@
 ---
 name: suno-songwriter
 license: MIT
-description: "Write, revise, plan, or adapt songs, lyrics, hooks, and AI music prompts. Use for Suno vocal or instrumental packages, song matrices, multilingual adaptation, genre treatments, reusable artist personas, album plans, Suno settings and iteration, sound samples, and cover-art prompts. Supports original style-inspired writing without copying lyrics. Not for standalone music theory, general DAW mixing, or licensing advice."
+description: "Write, revise, plan, or adapt songs, lyrics, hooks, and AI music prompts. Targets Suno v6, v6-wild, and v6-mini. Use for Suno vocal or instrumental packages, song matrices, multilingual adaptation, genre treatments, reusable artist personas, album plans, Suno settings and iteration, sound samples, and cover-art prompts. Supports original style-inspired writing without copying lyrics. Not for standalone music theory, general DAW mixing, or licensing advice."
 ---
 
 # Suno Songwriter
 
-Create songs and prompts around a clear hook, musical identity, and playable structure. Target Suno v6; v6 model and FAQ guidance rechecked 2026-09-24 against the official sources in `references/suno-v6-controls.md`. Suno retired every pre-v6 model on 2026-09-09, so `v6`, `v6-wild`, and `v6-mini` are the only models that generate new material. This is a target version, not a promise that every account exposes the same UI. Re-check controls when the user's model or interface differs.
+Create songs and prompts around a clear hook, musical identity, and playable structure. Target Suno v6; v6 model and FAQ guidance rechecked 2026-09-24 against the official sources in `references/suno-v6-controls.md`, with community v6 test reports surveyed 2026-11-04. When a user brings v5.5 habits or recipes, use the What Changed From v5.5 table in that file. Suno retired every pre-v6 model on 2026-09-09, so `v6`, `v6-wild`, and `v6-mini` are the only models that generate new material. This is a target version, not a promise that every account exposes the same UI. Re-check controls when the user's model or interface differs.
 
 ## Workflow
 
@@ -50,7 +50,7 @@ Read the finished fields against each other before returning them. The drafting 
 - Check section and language promises against Lyrics; place instrumental, harmony, and vocal-layer changes in the intended sections. Conflicting fields can produce unwanted results, but no instruction guarantees rendering.
 - Style does not contradict itself. Reconcile a hushed intimate mix against massed layers by placing the change, not by listing both.
 - Parentheses hold sung words only. Production direction belongs in the section tag.
-- Section tags use a plain hyphen before a descriptor: `[Verse 2 - layered vocals]`.
+- Section tags use a plain hyphen or a pipe before a descriptor, consistently within one song: `[Verse 2 - layered vocals]` or `[Bridge | whispered, in French]`. Keep descriptors short.
 - The last sung line has a section after it whenever the cut must not clip it.
 - `Language Notes` appear whenever the lyric changes language.
 
@@ -62,8 +62,9 @@ Read the finished fields against each other before returning them. The drafting 
 - Keep POV, tense, dialect, and vocal identity intentional. Preserve conversational grammar when it serves the character and rhythm.
 - Check stressed syllables, phrase lengths, breath points, and hook vowels. Four-line verses and short choruses are useful starting shapes, not required counts; lines are not bars. Denser rap or spoken-sung verses need rhythmic space, not a pop word-count cap.
 - Choose genre, groove, voice, instruments, and production from the brief. Let the genre affect cadence, hook mechanism, and form as well as timbre; for hybrids resolve pulse and foreground conflicts before adding genre labels. Do not inherit the previous song's palette. Genre menus and BPM bands suggest options; the user's deliberate choices win.
-- Use short bracketed section cues where helpful. Put only words intended to be sung in parentheses. Tags may be ignored or sung; `[End]` requests closure but cannot enforce an exact ending. Give the last lyric a section to land after it when the cut must not clip a sung line.
-- Match the deliverable to the user's model and plan. Suggest `v6` for a defined brief, `v6-wild` only for deliberate exploration, and paid-only controls only when the user has them. Hold Variety at 0 whenever the exact Style text must survive between takes.
+- Use short bracketed section cues where helpful; v6 reportedly acts on delivery, language, and energy direction placed inside a section header, so put per-section changes there and persistent sound in Style. Put only words intended to be sung in parentheses. Tags may be ignored or sung; `[End]` requests closure but cannot enforce an exact ending. Give the last lyric a section to land after it when the cut must not clip a sung line.
+- Write Style as connected musical language (who sings how, over what, doing what) rather than a long list of vague adjectives; v6 testers report adjective piles average into bland output. Keep lyric density matched to the tempo and time budget, since overfull sections are a common cause of rushed or skipped delivery.
+- Match the deliverable to the user's model and plan. Suggest `v6` for a defined brief, `v6-wild` only for deliberate exploration, and paid-only controls only when the user has them. Hold Variety at 0 whenever the exact Style text must survive between takes; its reported default on `v6` rewrites the prompt. The two takes of one generation can differ more than a prompt edit, so judge a change across both takes.
 - Adapt supplied original lyrics at the requested level of change. For third-party song references, extract broad traits and write fresh expression rather than copying distinctive lines or hooks. Translate artist references into musical traits for Suno prompt fields.
 - For multilingual songs, preserve meaning and hook function with natural target-language stress. Follow a request for literal translation when given; do not silently substitute adaptation.
 - For instrumentals, review motif, cue arc, instrumentation, and vocal-texture constraints. A no-voice brief excludes choir and chops too; requested wordless vocals need a compatible vocal-enabled workflow.

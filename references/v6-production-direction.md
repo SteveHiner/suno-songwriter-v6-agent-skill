@@ -67,6 +67,18 @@ State it when it matters:
 
 One compact version: `full-band energy throughout with foreground riffs and active drums during verses`.
 
+## Vocal Delivery And Lyric Density
+
+"v6 vocals sound flat or rushed" is the most common v6 complaint in community reports. Before changing the lyric, check the rendered tempo: a stated BPM is sometimes ignored, and a faster render rushes any lyric.
+
+- Match syllable load to tempo and section length. A verse written as dense prose at a fast tempo has nowhere to breathe. Cut words before cutting lines.
+- Give the chorus open vowels and space; contrast tight verses with a short, open chorus.
+- Splitting long lines into short ones does not by itself slow delivery, per one replication report. Fewer syllables does.
+- State delivery positively in Style or the section cue (`unhurried phrasing, lingering on held notes`) rather than describing what to avoid.
+- Inline tricks such as a `[Silence]` tag after each line or hyphenating words circulate widely but are anecdotal. Offer them only as experiments after density and tempo are right.
+- For one bad line or section, use a plain-language edit or Replace Section instead of rebuilding the song.
+- Some flatness is mix rather than performance; see the production clause below.
+
 ## Production Clause
 
 When a take sounds muffled, distant, or smeared, describe the wanted result rather than writing `professional production`. Keep the clause short; the musical direction still needs the field.

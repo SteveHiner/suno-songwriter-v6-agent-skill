@@ -859,14 +859,19 @@ choose a supported duration and quality in the current interface.</code></pre>
 
   <h2>Variety: Advanced tab</h2>
   <p>Open the Advanced tab and adjust Variety there. Its location was confirmed in the user's interface on September 24, 2026. Keep the setting out of Styles and Lyrics.</p>
-  <p>Suno's <a href="https://help.suno.com/en/articles/13924481">v6 FAQ</a> documents that Variety can rewrite your style prompt. Set it to <strong>0</strong> when retaining exact Style text for comparisons or a consistent persona or album. Raise it deliberately for exploration. Intermediate labels and per-model defaults remain unverified; use the control displayed in your account.</p>
+  <p>Suno's <a href="https://help.suno.com/en/articles/13924481">v6 FAQ</a> documents that Variety can rewrite your style prompt. Set it to <strong>0</strong> when retaining exact Style text for comparisons or a consistent persona or album. Raise it deliberately for exploration. Community guides report five stops (Off, Normal, High, Extra, Max) with Normal the default on v6 and v6-mini and Off on v6-wild, and one 54-take test found Off kept the Style text intact on 52 takes while Normal rewrote it every time. These are reported, not documented; use the control displayed in your account.</p>
+  <p>The two takes of one v6 generation can differ more than a deliberate prompt edit. Listen to both before deciding a change helped.</p>
   <p>Variety 0 preserves prompt control, not identical audio. Hold model, source, other settings, and personalization constant when comparing takes.</p>
+
+  <h2>Section cues in v6</h2>
+  <p>Testers report that v6 acts on short delivery, language, and energy direction written inside a section header, such as <code>[Bridge | whispered, in French]</code> or <code>[Verse 1 - low, close-mic]</code>. Keep cues to a few words, use them only where something changes, and mirror an essential change with one clause in Style. Unknown coined tags are reported to be dropped.</p>
+  <p>Write Style as connected musical language rather than a long list of adjectives; v6 testers report adjective piles average into bland output. Old v5.5 tag-stack recipes were tuned to a retired model and should be rebuilt from intent.</p>
 
   <h2>Vocal Gender</h2>
   <p>A dropdown with two documented values, <a href="https://help.suno.com/en/articles/10153473">Male and Female</a>. It steers the singer; it does not select a Voice and does not replace describing register, texture, and phrasing in Style.</p>
 
   <h2>Max Mode</h2>
-  <p>Max Mode spends more credits per generation for consistency and fidelity: long songs, faithful covers, style transfer, and holding vocals steady across a track. Leave it off while calibrating a brief, because extra credits do not fix a prompt problem. A baseline generation is two songs for 10 credits; Suno says Max Mode costs more without publishing a multiplier.</p>
+  <p>Max Mode spends more credits per generation for consistency and fidelity: long songs, faithful covers, style transfer, and holding vocals steady across a track. Leave it off while calibrating a brief, because extra credits do not fix a prompt problem. A baseline generation is two songs for 10 credits; Suno says Max Mode costs more without publishing a multiplier; community reports put it at double, 20 credits per generation.</p>
 
   <h2>Downloads are the binding limit</h2>
   <p>Since September 3, 2026 downloads are <a href="https://suno.com/blog/suno-updates-tos">capped separately from credits</a>: 7 lifetime on Free, 20 per month on Pro, 60 per month on Premier, with Premier Studio exports uncapped. One song is one download whatever the format, and its stems come inside it. Credits buy far more generations than downloads allow releases, so the skill treats deciding as the expensive step and says to compare inside Suno before spending one.</p>
@@ -1123,6 +1128,7 @@ Ending: complete the final lyric, short instrumental outro.</code></pre>
   <p class="lede">What changed, most recent first.</p>
 
   <h2>Unreleased</h2>
+  <p>November 4, 2026: surveyed community v6 test reports and added a What Changed From v5.5 table, v6 section cues with the pipe form, reported slider and Variety defaults, lyric-density guidance for rushed vocals, reported Voices and Custom Models details, and four regression cases.</p>
   <p>Expanded songwriting beyond compact pop templates: lyric angles, hook design, prosody, rhyme, section development, five genre-writing families, and a fusion method built around musical roles. Removed fixed switch limits and compulsory chorus simplification.</p>
   <p>September 24, 2026: added practical harmony, melody, rhythm, and arrangement guidance; placed Variety in the Advanced tab; clarified that Variety 0 does not make takes identical; added a whole-response check for em dashes and en dashes.</p>
   <ul>

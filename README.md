@@ -23,6 +23,7 @@ Browseable docs live at [regiellis.github.io/suno-songwriter-agent-skill](https:
 - Genre fusion through shared pulse, phrasing, harmony, form, and timbral roles, with conflict resolution and worked blends
 - Instrumental prompts and arrangements for lofi, OST, game loops, ambience, and background music
 - `Style` and `Excluded Styles` separation for vocal and Advanced modes
+- What changed from Suno v5.5 to v6, v6 section cues (`[Bridge | whispered, in French]`), and connected-language Style prompts
 - Model choice across `v6`, `v6-wild`, and `v6-mini`, Weirdness and Style Influence starting ranges, Variety control for prompt comparisons, and Audio Influence when an upload exposes it
 - Multilingual lyrics, translation, adaptation, dialect, script, and pronunciation notes
 - Reference-lyrics transformation without copying the source too closely

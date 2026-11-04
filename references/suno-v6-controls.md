@@ -1,6 +1,6 @@
 # Suno v6 Controls
 
-Use this reference for model choice, field mapping, sliders, personalization, and troubleshooting. The skill targets Suno v6; model, release overview, and v6 FAQ sources were rechecked 2026-09-24; other source checks remain dated 2026-09-13. Account, plan, app, and rollout can change which controls appear. Confirm the user's surface before prescribing unavailable settings.
+Use this reference for model choice, field mapping, sliders, personalization, and troubleshooting. The skill targets Suno v6; model, release overview, and v6 FAQ sources were rechecked 2026-09-24; other source checks remain dated 2026-09-13. Community v6 test reports (slider defaults, Variety behavior, section cues, Voices, Custom Models, lyric density) were surveyed 2026-11-04 and are labeled as reported, not documented. Account, plan, app, and rollout can change which controls appear. Confirm the user's surface before prescribing unavailable settings.
 
 ## Models
 
@@ -14,11 +14,31 @@ Suno released the v6 generation on 2026-09-09 and retired every earlier model. v
 | `v6-wild` | Deliberate exploration. Less predictable, more varied, unconventional results | Pro and Premier |
 | `v6-mini` | Faster and lighter; the free-plan model | All plans |
 
-Default to `v6` for a defined brief and to `v6-wild` only when the user wants surprise. Write for `v6-mini` when the user is on the free plan; keep the same craft and drop paid-only control suggestions. [What's new in v6](https://help.suno.com/en/articles/13924801) states all three variants generate up to 8 minutes in one pass.
+Default to `v6` for a defined brief and to `v6-wild` only when the user wants surprise. `v6-wild` is designed to deviate from the prompt, so judge it across several generations, not one. Write for `v6-mini` when the user is on the free plan; keep the same craft and drop paid-only control suggestions. [What's new in v6](https://help.suno.com/en/articles/13924801) states all three variants generate up to 8 minutes in one pass.
+
+## What Changed From v5.5
+
+Use this list when a user brings v5.5 habits or recipes. Documented items come from Suno's v6 pages; reported items are community observations to verify by listening.
+
+| Area | v5.5 habit | v6 practice |
+| --- | --- | --- |
+| Models | One model plus older picks | `v6`, `v6-wild`, `v6-mini` only; pre-v6 models cannot generate (documented) |
+| Length | Shorter ceilings per model | Up to 8 minutes per generation on all three (documented); Duration Custom reported at 0:10 to 6:00 |
+| Style text | Tag stacks worked | Plain musical language that connects voice, instruments, and feel tends to work better; long vague adjective lists get averaged into blandness (reported) |
+| Style rewriting | Text used as typed | Variety can rewrite Style before generation; set it to 0 to keep control (documented) |
+| Take variance | Takes differed modestly | The two takes of one generation can differ more than a deliberate prompt edit (reported) |
+| Section cues | Bare section headers | v6 reportedly reads short delivery direction inside a section bracket, such as `[Bridge \| whispered, in French]`; see `suno-meta-tags.md` (reported, thin evidence) |
+| Editing | Replace Section by region | Plain-language edits of one section or one lyric line, on top of Replace Section (documented) |
+| Inputs | Text and audio uploads | Songs, playlists, audio, images, video, voice memos, mashups, sample-and-isolate (documented) |
+| Personas | Personas button | Voices; older Personas convert and can be upgraded to v6 (reported); see `personas.md` |
+| Consistency | Prompt only | Max Mode toggle trades credits for consistency (documented) |
+| Training data | Unstated | Suno says v6 was trained on newly licensed data with label partners. Mention only if the user asks about provenance |
+
+Old v5.5 prompts were tuned to a model that no longer exists. Rebuild from the song's intent rather than porting a recipe word for word.
 
 ## Surfaces
 
-The Create page separates Simple, Advanced, and Sounds. Simple takes plain-language description plus references. Advanced exposes the explicit controls below and is where every setting in this file lives. Sounds generates short one-shots and loops; see `suno-sounds.md`.
+The Create page separates Simple, Advanced, and Sounds. Simple takes plain-language description plus references; its description box was measured at 3,000 characters by one community source, so aim for one or two dense sentences. Advanced exposes the explicit controls below and is where every setting in this file lives. Sounds generates short one-shots and loops; see `suno-sounds.md`.
 
 Call it Advanced, not Custom Mode. Suno's [Custom Mode guide](https://help.suno.com/en/articles/3197377) still describes a Custom toggle and is behind the shipped UI; the field order it lists (lyrics or Instrumental, Styles, then the advanced controls) still holds. Do not revert this naming to match that article, and do not equate a no-vocal song with a description-only UI.
 
@@ -60,11 +80,15 @@ When a compact line underspecifies a dense arrangement, or the take has a named 
 
 Use [Exclude](https://help.suno.com/en/articles/3161921) for unwanted instruments, genres, or vocal traits. Keep the list focused on actual constraints or observed drift; do not fill it with speculative problems. Avoid contradicting Style. Exclude is a request, not a guaranteed ban. Prefer stating the wanted behavior positively in Style over listing its opposite here.
 
+Write Style as connected musical language, not a bag of nouns. `breathy alto close to the mic over brushed drums and upright bass, piano answering each vocal phrase` tells v6 how the parts relate; `jazz, sad, piano, female, slow, moody, cinematic, emotional` leaves it to average. Concrete descriptors beat a long list of vague adjectives. Front-load the defining sound; early terms are reported to carry the most weight.
+
 Translate artist references into era, groove, instrumentation, phrasing, and production. For example: `early-2010s Toronto melodic rap, sparse 808s, hazy keys, intimate half-sung delivery`. This makes individual traits editable and avoids passing artist names to generation fields.
 
 ## Creative Sliders
 
 [Official slider behavior](https://help.suno.com/en/articles/6141377): Weirdness spans Safe to Chaos, with 50% described as normal; Style Influence spans Loose to Strong and controls adherence to Styles; Audio Influence appears with audio uploads.
+
+Community guides consistently report v6 defaults of Weirdness 50%, Style Influence 50%, and Audio Influence 25%. A 50% Style Influence gives a carefully written Style line only moderate authority, so a precise brief usually wants it raised. Read the user's displayed values rather than asserting defaults; they are reported, not documented.
 
 ### Variety
 
@@ -72,7 +96,7 @@ Variety is in the Advanced tab, confirmed by the user on 2026-09-24. Set it ther
 
 Set Variety to 0 whenever the exact Style text matters: A/B prompt comparisons, a persona or album that must stay consistent, a recipe the user wants reproduced. A rewritten prompt can obscure the change being tested, so prompt comparisons should control Variety as well as the other visible settings. Even at 0, different takes can vary. Raise it later, deliberately, when the user wants stranger hybrids.
 
-Suno documents no intermediate stops, no per-model defaults, and no numeric scale beyond "reduce to 0". A single community source reports stops of Off, Normal, High, Extra, Max with Normal defaulting on `v6` and `v6-mini` and Off on `v6-wild`; that is unverified, so read the user's own slider rather than asserting a default.
+Suno documents no intermediate stops, no per-model defaults, and no numeric scale beyond "reduce to 0". Several community guides now report the same five stops, Off ("Exact style"), Normal, High, Extra, and Max, with Normal the default on `v6`, `v6-mini`, and Custom Models and Off the default on `v6-wild`. One tester (2026-10-22, 27 renders, 54 takes) reports that at Off the pasted Style survived word for word on 52 of 54 takes, while at Normal it was rewritten on every take. Treat this as consistent community evidence, not documentation, and read the user's own slider. Because Normal is the reported default on `v6`, assume an untouched slider is rewriting the prompt.
 
 ### Ranges
 
@@ -84,6 +108,8 @@ The ranges below are skill heuristics, not official presets or measured success 
 | Balanced exploration | 35-50% | 60-80% | 0, or raise if exposed | Room for variation within the brief |
 | Experimental but directed | 50-70% | 60-85% | Raise if exposed | More surprising results to compare |
 | Deliberately loose exploration | 70-100% | 20-60% | High or above | Higher risk of drift and unusable takes |
+
+Reported failure edges: Weirdness below about 20 can sound stale, and 90 or above tends toward artifacts. Testers suggest Style Influence of roughly 65-95% with Weirdness under 50% when a precise brief is being ignored. These are field notes, not thresholds.
 
 Calibrate first, then loosen. A clearly described hybrid at moderate Weirdness usually holds together better than a vague prompt at high Weirdness. If lowering Weirdness makes the output break down, return to the last working setting and compare with the same prompt and model; do not continue lowering it as a stability fix.
 
@@ -101,7 +127,7 @@ Keep the source clip and other controls fixed while comparing. A selected Voice,
 
 ## Max Mode
 
-Max Mode is an Advanced toggle that spends more credits per generation in exchange for consistency and fidelity. The [v6 FAQ](https://help.suno.com/en/articles/13924481) names its cases: songs past the short end of the range, covers that must stay close to the source, style transfer between songs, and holding vocals and style steady across a full track. Community reports put the cost at double; treat the multiplier as unverified and the direction as certain.
+Max Mode is an Advanced toggle that spends more credits per generation in exchange for consistency and fidelity. The [v6 FAQ](https://help.suno.com/en/articles/13924481) names its cases: songs past the short end of the range, covers that must stay close to the source, style transfer between songs, and holding vocals and style steady across a full track. Community reports put the cost at double (20 credits per two-song generation instead of 10), which halves a Pro plan's song count; treat the multiplier as reported and the direction as certain. Suno reportedly recommends Max Mode when a Voice is selected.
 
 Leave it off while calibrating a brief. Getting standard v6 to follow the prompt is a prompt problem, and paying double to discover that wastes credits. Turn it on once the direction is right and the remaining fault is consistency or fidelity. A baseline generation is two songs for 10 credits; image and video inputs add cost.
 
@@ -115,7 +141,7 @@ Tempo, key, chord progressions, bar counts, and specific vocalist hand-offs in t
 
 ## Personalization
 
-Suno separates [Voices](https://help.suno.com/en/articles/11362369), [Custom Models](https://help.suno.com/en/articles/11362497), and [My Taste](https://help.suno.com/en/articles/11362561). Voices and Style Personas are one surface: Style Personas sits in the Voices menu and opens `Create a Voice` (Beta), taking a recorded or uploaded sample, with converted older Personas reachable through `Select from library`. See `personas.md`. Keep the selected Voice's identity separate from delivery directions such as restrained, whispered, or belted. A text instruction does not select or train a Voice. Custom Models provide a personalized model basis and now run on v6; existing models were carried over, so keep the requested song direction coherent with the model rather than assuming its earlier behavior.
+Suno separates [Voices](https://help.suno.com/en/articles/11362369), [Custom Models](https://help.suno.com/en/articles/11362497), and [My Taste](https://help.suno.com/en/articles/11362561). Voices and Style Personas are one surface: Style Personas sits in the Voices menu and opens `Create a Voice` (Beta), taking a recorded or uploaded sample, with converted older Personas reachable through `Select from library`. See `personas.md`. Keep the selected Voice's identity separate from delivery directions such as restrained, whispered, or belted. A text instruction does not select or train a Voice. Custom Models provide a personalized model basis and now run on v6; existing models were carried over, so keep the requested song direction coherent with the model rather than assuming its earlier behavior. Community trackers report Custom Model creation as a Beta for Pro and Premier, costing 100 credits, needing at least 6 uploaded songs with 24 or more suggested, and private to the account. Suno has not stated whether a model trained today fine-tunes the v6 base; do not claim either way. With a Custom Model selected, prompt around the song's intent and avoid piles of conflicting genre tags.
 
 My Taste personalizes the Magic Wand, the icon at the top right of the Styles box that writes a detailed style description from the user's listening and creation habits. It is on by default and can be viewed, edited, or disabled from the account menu. For comparisons, retain the exact final Style text rather than invoking the wand again between takes, and hold Variety at 0 so the retained text survives. If suggestions repeatedly pull toward a familiar palette, review personalization settings and rewrite the direction deliberately.
 
@@ -127,7 +153,10 @@ Suno's [moderation guide](https://help.suno.com/en/articles/3198209) says genera
 | --- | --- |
 | Explicit moderation error | Inspect the flagged wording and propose a compatible revision |
 | Styles ignored | Set Variety to 0, remove conflicting directions, front-load the defining sound, then compare Style Influence |
-| Two takes differ more than the prompt edit | Set Variety to 0 in the Advanced tab and hold other controls fixed; generated takes still vary |
+| Two takes differ more than the prompt edit | Set Variety to 0 in the Advanced tab and hold other controls fixed; listen to both takes and compare across at least two generations before crediting the edit |
+| Rushed, flat, or spoken-sounding vocal | Check the rendered tempo first, then reduce lyric density for the section or give it more time; see `v6-production-direction.md` |
+| Sections skipped or lyrics repeated in a long song | Trim the lyric toward the time budget, then repair the span with Replace Section or a plain-language edit rather than re-rolling |
+| Old v5.5 recipe sounds wrong | Rebuild from the song's intent in connected musical language; do not port tag stacks verbatim |
 | Generic but valid take | Add one defining groove, instrument, or arrangement gesture |
 | Chaotic take | Simplify the prompt or lower Weirdness; compare separately |
 | Unwanted sound | Add a focused Exclude item if available; audition again |

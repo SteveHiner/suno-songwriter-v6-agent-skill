@@ -4,6 +4,13 @@
 
 ### Added
 
+- A `What Changed From v5.5` table in `references/suno-v6-controls.md`, from a 2026-11-04 survey of Suno's v6 pages and community v6 test reports: models, length, connected-language Style prompts, Variety rewriting, take variance, section cues, plain-language edits, multimodal inputs, Voices, Max Mode, and training-data provenance. Documented and reported items are labeled separately.
+- `v6 Section Cues` in `references/suno-meta-tags.md`: v6 reportedly acts on short delivery, language, and energy direction inside a section header (`[Bridge | whispered, in French]`). The pipe form is now accepted alongside the hyphen form, with guidance to mirror essential changes in Style and to avoid coined tag syntax, which is reported to be dropped.
+- Community-reported v6 slider defaults (Weirdness 50, Style Influence 50, Audio Influence 25), the five Variety stops with per-model defaults now reported by several guides, and a 54-take test showing Variety Off preserved the Style text on 52 of 54 takes while Normal rewrote it every time.
+- `Vocal Delivery And Lyric Density` in `references/v6-production-direction.md` for the common rushed or flat v6 vocal complaint: check rendered tempo, then syllable load; `[Silence]` and hyphenation tricks are labeled anecdotal.
+- Reported v6 Voices and Custom Models details (Upgrade Voice to v6, no Voices on instrumentals, Max Mode recommended with a Voice, 100-credit Custom Model Beta) in `references/personas.md` and the controls reference.
+- Regression cases `MD11`-`MD14` covering ported v5.5 tag stacks, per-section language cues, rushed vocals, and take variance versus prompt edits.
+
 - A structured 16-case songwriting and fusion benchmark with synthetic original inputs, an independent judging protocol, anchored quality scores, and revision-comparison guidance. No real Suno data is required; behavioral results are pending.
 
 - Five genre-writing family references and a coverage router, with lane-specific phrasing, hook, form, and arrangement decisions.

@@ -11,6 +11,25 @@ Two different things:
 
 Section headers can also carry a short performance descriptor (see `references/song-structure.md` § Section Tag Descriptors): `[Whispered Verse]`, `[Explosive Chorus]`, `[Half-time Verse 2]`.
 
+## v6 Section Cues
+
+Community testers report that v6 reads short performance direction written inside a section header and acts on it, including details that appear nowhere in Style. The best-known example is a v6-written caption describing a whispered French bridge and Italian verses that existed only in the section cues. The evidence is one launch-day test repeated by guides, so treat it as a useful lever, not a guarantee.
+
+Two equivalent forms are in use. Pick one per song and keep it consistent:
+
+```text
+[Verse 1 - low, close-mic, almost spoken]
+[Bridge | whispered, in French]
+[Final Chorus | key lift, gang vocals]
+```
+
+- Keep the descriptor to roughly 3-12 words with one or two instructions. Stacking many modifiers behind several pipes is unverified and more often ignored.
+- Use a cue where delivery, language, energy, or arrangement actually changes. Persistent genre and mix still belong in Style.
+- When a section change is essential, state it in both places: a cue in the section header and one plain clause in Style (for example `whispered French bridge`). Testers report that agreement between fields lands more often than either alone.
+- Unknown or invented bracket tags are reported to be dropped rather than interpreted. Prefer plain musical words over coined tag syntax.
+- Never use em dashes or en dashes in cues. Use the ASCII hyphen or the pipe.
+- Section headers are hints. Testers also report v6 sometimes rolls through Verse, Pre-Chorus, Chorus, and Bridge labels without an audible reset; make the contrast audible in the writing (phrase length, register, density) as well as in the tag.
+
 ## Instrumental Moments
 
 Put these on their own line where the band should take over:
@@ -133,6 +152,7 @@ Suno will often invent extra verses or fade awkwardly if the lyric block ends wi
 ## Rules and Failure Modes
 
 - **Tags get sung if placed mid-line:** Keep cues on their own line.
+- **Unknown tags are dropped:** Coined syntax such as a timed rest inside brackets is not documented; plain musical words work better than invented commands.
 - **Too many tags = ignored or muddy:** Budget tags by purpose. A groove-narrative song can carry more arrangement cues than a pop song, but each cue should affect the recording.
 - **Don't put production direction in tags:** Persistent genre/instrument/mix direction belongs in `Style:` for vocal and Advanced modes or `Instrumental Prompt:` for Instrumental Mode. Tags are for moment-to-moment changes.
 - **`[End]` requests closure:** If the user complains Suno keeps adding verses, add `[End]`.

@@ -28,6 +28,8 @@ The in-product guidance: sing in the style and language you want, pick a quiet s
 
 [Custom Models](https://help.suno.com/en/articles/11362497) are a different thing again: a private model trained on at least 6 of the user's own songs, max 3 per account, now running on v6. A model is not a voice.
 
+Community trackers report further v6 details not yet in the help center: an `Upgrade Voice to v6` action that separates new Voices from legacy Style Voices, Voices being unavailable on instrumental tracks, Suno recommending Max Mode when a Voice is selected, and Custom Model creation as a 100-credit Beta for Pro and Premier with 24 or more songs suggested. Treat these as reported and confirm on the user's screen before writing them into a spec.
+
 Keep these distinct in output. A Voice or Style Persona is captured audio, a Custom Model is a trained model, and this file is a written brief. Never describe one as another, and never claim a text description selects any of them.
 
 Suno's help center has lagged the shipped UI repeatedly, including on this feature's own minimum sample length. When a spec depends on a platform feature, ask the user what their screen shows and record that. Whether a Style Persona captured under a retired pre-v6 model still applies to a v6 generation is not documented either way; treat it as worth a trial, not a promise.

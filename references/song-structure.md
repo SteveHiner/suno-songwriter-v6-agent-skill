@@ -106,7 +106,7 @@ Can:
 
 ## Section Tag Descriptors
 
-A section tag can carry a short performance or energy cue, not just a label. Cues such as `[Verse - whispered]` or `[Chorus - explosive]` request section behavior, but may be ignored or sung.
+A section tag can carry a short performance or energy cue, not just a label. Cues such as `[Verse - whispered]` or `[Chorus - explosive]` request section behavior, but may be ignored or sung. v6 testers also use a pipe, `[Bridge | whispered, in French]`, and report that v6 acts on direction placed there; see `suno-meta-tags.md` § v6 Section Cues.
 
 Useful descriptors:
 - intensity: `[Quiet Verse]`, `[Half-time Verse 2]`, `[Building Pre-Chorus]`, `[Explosive Chorus]`, `[Double-time Outro]`
