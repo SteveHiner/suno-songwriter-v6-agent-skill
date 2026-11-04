@@ -28,6 +28,7 @@ Two equivalent forms are in use. Pick one per song and keep it consistent:
 - When a section change is essential, state it in both places: a cue in the section header and one plain clause in Style (for example `whispered French bridge`). Testers report that agreement between fields lands more often than either alone.
 - Unknown or invented bracket tags are reported to be dropped rather than interpreted. Prefer plain musical words over coined tag syntax.
 - Never use em dashes or en dashes in cues. Use the ASCII hyphen or the pipe.
+- Section headers are also the boundaries the v6 section editor works with. Shorter sections give finer control over what a later edit replaces.
 - Section headers are hints. Testers also report v6 sometimes rolls through Verse, Pre-Chorus, Chorus, and Bridge labels without an audible reset; make the contrast audible in the writing (phrase length, register, density) as well as in the tag.
 
 ## Instrumental Moments

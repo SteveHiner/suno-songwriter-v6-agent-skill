@@ -4,6 +4,11 @@
 
 ### Added
 
+- Community v6 test findings read directly from HookGenius, Replayed Studio, Undetectr, and the bitwize-music slider reference on 2026-11-04 (Reddit refuses unauthenticated access, so r/SunoAI threads are cited only through those write-ups):
+  - `references/v6-production-direction.md`: an ordered fix for rushed vocals (tempo read-back, syllable load, mid-line commas and no trailing commas, per-section delivery, local repair), labeled experiments (`[Silence]` at line ends, capitals, dropped invented tags, higher Variety for livelier singing), a density/placement/render diagnosis for buried or muffled vocals, and a four-part voice line.
+  - `references/suno-v6-controls.md`: Variety stop labels, the Personalize toggle, defaults reasserting on model switch, cover drift with Variety above Off, how to check a stored Style for rewrites, v6's own track caption, Max Mode's reported UI copy, the artist-name filter rewriting ordinary words, a v5.5 prompt migration order, and current plan prices.
+  - Section headers as edit boundaries, a no-trailing-comma lyric rule in `SKILL.md`, and cases `MD18`-`MD19`.
+
 - Verified against Suno's own pages, read directly on 2026-11-04: the v6 FAQ, Current Models, What's New in v6, Voices, and Custom Models help articles, the v6 announcement, and the full release notes.
 - `references/suno-speech.md` and a `Title` / `Script` / `Voice` / `Music` output for Speech (beta), the 2026-10-01 mode that generates narration and its soundtrack together, with routing between Speech and `[Spoken]` sections in songs.
 - Suno MCP (beta, 2026-10-28) guidance in `SKILL.md`: submit a finished package only when a Suno connector is actually available and the credit spend is confirmed; otherwise return text and never claim generation.

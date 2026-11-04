@@ -37,6 +37,17 @@ Use this list when a user brings v5.5 habits or recipes. Documented items come f
 
 Suno's FAQ says v6 "understands more of the language and building blocks musicians use" and that in Simple mode "you don't need to know which tool to reach for (like Cover, Remix, Extend)... The model figures out the workflow." Old v5.5 prompts were tuned to a model that no longer exists. Rebuild from the song's intent rather than porting a recipe word for word.
 
+A migration order reported by one tester who moved about sixty v5.5 prompts:
+
+1. Save every prompt, lyric sheet, Exclude list, and slider setting to a text file outside Suno.
+2. Set controls before touching words: Variety Off, Style Influence raised toward 70-85, Weirdness near default, Max Mode off.
+3. Run the untouched prompt once and listen to both takes. About a third of that tester's prompts needed no rewrite.
+4. For the rest, cut before adding. Remove feeling words (`epic`, `emotional`, `cinematic`) and keep sound words: tempo, named instruments and how they are played, vocal register and delivery, mix character.
+5. Move negatives to Exclude and per-section delivery into section headers.
+6. Test lyric or structure changes cheaply on `v6-mini`; use Max Mode only for keepers.
+
+Plans and prices change; as reported in October 2026: Free gets 50 credits a day with `v6-mini`, Pro is $10 a month ($8 billed annually) with 2,500 credits, Premier is $30 a month ($24 billed annually) with 10,000 credits and Studio. Confirm on the user's pricing page before quoting.
+
 ## Surfaces
 
 The Create page separates Simple, Advanced, and Sounds. Simple takes plain-language description plus references; its description box was measured at 3,000 characters by one community source, so aim for one or two dense sentences. Advanced exposes the explicit controls below and is where every setting in this file lives. Sounds generates short one-shots and loops; see `suno-sounds.md`.
@@ -99,7 +110,15 @@ Variety is in the Advanced tab, confirmed by the user on 2026-09-24. Set it ther
 
 Set Variety to 0 whenever the exact Style text matters: A/B prompt comparisons, a persona or album that must stay consistent, a recipe the user wants reproduced. A rewritten prompt can obscure the change being tested, so prompt comparisons should control Variety as well as the other visible settings. Even at 0, different takes can vary. Raise it later, deliberately, when the user wants stranger hybrids.
 
-Suno documents no intermediate stops, no per-model defaults, and no numeric scale beyond "reduce to 0". Several community guides now report the same five stops, Off ("Exact style"), Normal, High, Extra, and Max, with Normal the default on `v6`, `v6-mini`, and Custom Models and Off the default on `v6-wild`. One tester (2026-10-22, 27 renders, 54 takes) reports that at Off the pasted Style survived word for word on 52 of 54 takes, while at Normal it was rewritten on every take. Treat this as consistent community evidence, not documentation, and read the user's own slider. Because Normal is the reported default on `v6`, assume an untouched slider is rewriting the prompt.
+Suno documents no intermediate stops, no per-model defaults, and no numeric scale beyond "reduce to 0". Several community guides now report the same five stops with their UI labels: Off ("Exact style"), Normal ("Balanced variety"), High ("Distinct styles"), Extra ("Bold exploration"), and Max ("Unreasonably varied"), with Normal the default on `v6`, `v6-mini`, and Custom Models and Off the default on `v6-wild`. One tester (2026-10-22, 27 renders, 54 takes) reports that at Off the pasted Style survived word for word on 52 of 54 takes, while at Normal it was rewritten on every take. Treat this as consistent community evidence, not documentation, and read the user's own slider. Because Normal is the reported default on `v6`, assume an untouched slider is rewriting the prompt. The default reportedly reasserts when the user switches models, so check it each session.
+
+Further reported behavior:
+
+- A Personalize toggle ("Make Variety match your taste") sits next to Variety, off by default, and only acts when Variety is above Off.
+- Covers drift in melody with Variety above Off. For a faithful cover, set Variety to Off and Max Mode on before raising Audio Influence.
+- To check whether a rewrite happened, open the finished song's page and compare its stored Style with the pasted text. Terms shown after the Style with minus signs are the Exclude Styles field displayed back, not a rewrite.
+- v6 writes its own caption for each track. Reading it shows which directions the model picked up, including ones that lived only in section cues.
+- Some testers found higher Variety gave livelier, more melodic singing. Testing and reproducibility want Off; a final generation may not.
 
 ### Ranges
 
@@ -130,7 +149,7 @@ Keep the source clip and other controls fixed while comparing. A selected Voice,
 
 ## Max Mode
 
-Max Mode is an Advanced toggle that spends more credits per generation in exchange for consistency and fidelity. The [v6 FAQ](https://help.suno.com/en/articles/13924481) names its cases: songs past the short end of the range, covers that must stay close to the source, style transfer between songs, and holding vocals and style steady across a full track. Community reports put the cost at double (20 credits per two-song generation instead of 10), which halves a Pro plan's song count; treat the multiplier as reported and the direction as certain. Suno reportedly recommends Max Mode when a Voice is selected; its Voices article separately advises a high Audio Influence.
+Max Mode is an Advanced toggle that spends more credits per generation in exchange for consistency and fidelity. The [v6 FAQ](https://help.suno.com/en/articles/13924481) names its cases: songs past the short end of the range, covers that must stay close to the source, style transfer between songs, and holding vocals and style steady across a full track. The Max Mode toggle's own UI copy is reported as "Uses more compute to maximize consistency throughout the song. Costs 2x credits per song" (20 credits per two-song generation instead of 10), which halves a Pro plan's song count; treat the multiplier as reported and the direction as certain. Suno reportedly recommends Max Mode when a Voice is selected; its Voices article separately advises a high Audio Influence.
 
 Leave it off while calibrating a brief. Getting standard v6 to follow the prompt is a prompt problem, and paying double to discover that wastes credits. Turn it on once the direction is right and the remaining fault is consistency or fidelity. A baseline generation is two songs for 10 credits; image and video inputs add cost.
 
@@ -155,6 +174,7 @@ Suno's [moderation guide](https://help.suno.com/en/articles/3198209) says genera
 | Observation | First Step |
 | --- | --- |
 | Explicit moderation error | Inspect the flagged wording and propose a compatible revision |
+| Stored Style came back strange or genre-swapped | Look for an ordinary word that is also an artist's name; one tester's "capo" was read as an artist and replaced with a rap genre. Reword it |
 | Styles ignored | Set Variety to 0, remove conflicting directions, front-load the defining sound, then compare Style Influence |
 | Two takes differ more than the prompt edit | Set Variety to 0 in the Advanced tab and hold other controls fixed; listen to both takes and compare across at least two generations before crediting the edit |
 | Rushed, flat, or spoken-sounding vocal | Check the rendered tempo first, then reduce lyric density for the section or give it more time; see `v6-production-direction.md` |

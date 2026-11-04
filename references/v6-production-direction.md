@@ -69,15 +69,36 @@ One compact version: `full-band energy throughout with foreground riffs and acti
 
 ## Vocal Delivery And Lyric Density
 
-"v6 vocals sound flat or rushed" is the most common v6 complaint in community reports. Before changing the lyric, check the rendered tempo: a stated BPM is sometimes ignored, and a faster render rushes any lyric.
+"v6 vocals sound flat or rushed" is the most common v6 complaint in community reports. Work in this order; each step is cheaper than the next.
 
-- Match syllable load to tempo and section length. A verse written as dense prose at a fast tempo has nowhere to breathe. Cut words before cutting lines.
-- Give the chorus open vowels and space; contrast tight verses with a short, open chorus.
-- Splitting long lines into short ones does not by itself slow delivery, per one replication report. Fewer syllables does.
-- State delivery positively in Style or the section cue (`unhurried phrasing, lingering on held notes`) rather than describing what to avoid.
-- Inline tricks such as a `[Silence]` tag after each line or hyphenating words circulate widely but are anecdotal. Offer them only as experiments after density and tempo are right.
-- For one bad line or section, use a plain-language edit or Replace Section instead of rebuilding the song.
-- Some flatness is mix rather than performance; see the production clause below.
+1. **Check the rendered tempo.** One tester asked for 74 BPM and the editor read back 130 (possibly double-time detection, possibly an ignored BPM). Lyrics written for a slow tempo will rush at a fast one whatever else changes. Write the BPM in Style, check what the song reports, and regenerate if they disagree.
+2. **Reduce syllable load.** Match words to tempo and section length; cut words before cutting lines. Splitting long lines into short ones did not slow delivery in one replication report; fewer syllables does.
+3. **Punctuate for breath.** A comma inside a line, where a singer would breathe, reportedly produces a small hold (`Salt, on a borrowed guitar`). A comma at the end of a line reportedly causes stutter, because the line break already ends the phrase; strip trailing commas from lyric lines.
+4. **Direct delivery per section,** positively: `[Verse 1 | soft chest voice, behind the beat, holding the ends of lines]`, `[Chorus | full voice, pushed, sustained]`.
+5. **Repair locally.** For one bad line or section, use a plain-language edit or Replace Section instead of rebuilding the song. Shorter sections give finer edit boundaries. One tester estimates section replacement lands cleanly about two times in three; audition the joins.
+
+Experiments, offered only after the steps above and labeled as anecdotal (two independent reports, mostly slow ballads):
+
+- `[Silence]` at the end of every lyric line, inline rather than on its own row, reportedly adds a breath-to-a-beat hold. Pause length is not controllable. Do not add periods or an ellipsis before it; testers found stacked stop markers sped delivery up. Do not combine it with other stop tags.
+- Capitalizing a word reportedly makes it land harder. Use it sparingly and escalate toward the final chorus.
+- Invented tags such as `[2 Bar Rest]` did nothing; unknown tags are dropped. An instrument tag at a line end is texture, not a gap.
+- The same testers found a higher Variety setting gave more melodic movement than Off. Hold Variety at Off while testing a change, then consider raising it for the generation you intend to keep, accepting that Style may be rewritten.
+
+## Buried Or Muffled Vocals
+
+Community diagnosis splits "muffled" into three causes with different fixes:
+
+| Cause | Test | Fix |
+| --- | --- | --- |
+| Density: too many parts in the vocal range | The vocal snaps into focus when the band drops out | Say per section what plays under the vocal: `verse: only acoustic guitar and bass under the vocal`; add habitual culprits (pads, strings, synth layers) to Exclude |
+| Placement: the vocal was never put in front | Arrangement is clear but the voice sits inside it | Place it, do not praise it: `lead vocal in front of the band, close-miked and dry, instruments sit behind and below the voice`. Put the vocal clause right after the genre |
+| Render: the take itself is dull | The intro is already dull before the vocal enters | No adjective adds top end. Regenerate the same prompt, try another model, keep the song shorter; Max Mode if it degrades late in the track |
+
+Quality words (`crisp`, `clear`, `professional`, `radio-ready`) give the model nothing to act on; placement and relationships do. For a dry vocal, say it positively (`dry, close-mic'd, narrow stereo image`) and move reverb, hall, and room words out of Style and into Exclude.
+
+## Voice Line
+
+A useful Style voice line has four parts, about 15 to 30 words, placed right after the genre: who (range and voice type), texture (rasp, breath, grit), delivery (half-spoken verses, belted chorus, behind the beat), and placement (close and dry, doubled in the chorus). Example: `a warm female alto with a little rasp, singing just behind the beat, close and dry in the verses and doubled in the chorus`. Change it per section in the section headers rather than in Style.
 
 ## Production Clause
 
