@@ -19,6 +19,7 @@ Load only the files that affect the current request. Shared workflow and output 
 | Non-lyric tracks, game loops, score | `references/instrumental.md` |
 | Anime OP/ED, TV themes, trailers, edit lengths | `references/screen-music.md` |
 | Sound effects and individual samples | `references/suno-sounds.md` |
+| Spoken narration over music (Speech beta) | `references/suno-speech.md` |
 | Cover images and animated covers | `references/cover-art.md` |
 | Translation, adaptation, dialect, script | `references/multilingual.md` |
 | Choosing a palette without repeating defaults | `references/style-selection.md` |

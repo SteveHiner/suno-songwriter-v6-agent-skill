@@ -1,12 +1,12 @@
 # Suno v6 Controls
 
-Use this reference for model choice, field mapping, sliders, personalization, and troubleshooting. The skill targets Suno v6; model, release overview, and v6 FAQ sources were rechecked 2026-09-24; other source checks remain dated 2026-09-13. Community v6 test reports (slider defaults, Variety behavior, section cues, Voices, Custom Models, lyric density) were surveyed 2026-11-04 and are labeled as reported, not documented. Account, plan, app, and rollout can change which controls appear. Confirm the user's surface before prescribing unavailable settings.
+Use this reference for model choice, field mapping, sliders, personalization, and troubleshooting. The skill targets Suno v6; the v6 FAQ, model, what's-new, Voices, and Custom Models articles, the v6 announcement, and the release notes were read directly on 2026-11-04; other source checks remain dated 2026-09-13. Community v6 test reports (slider defaults, Variety behavior, section cues, Voices, Custom Models, lyric density) were surveyed 2026-11-04 and are labeled as reported, not documented. Account, plan, app, and rollout can change which controls appear. Confirm the user's surface before prescribing unavailable settings.
 
 ## Models
 
 Suno released the v6 generation on 2026-09-09 and retired every earlier model. v5.5, v5, v4.5, and v4 can no longer generate new material. Songs already in a library stay playable, shareable, and eligible for remaster and cover; any new iteration runs on v6. Do not offer a model choice the user cannot select, and do not treat a v5.5-era recipe as reproducible.
 
-[Current Models: v6](https://help.suno.com/en/articles/13924737) lists three variants. Pick by how much control the request needs, not by tier.
+[Current Models: v6](https://help.suno.com/en/articles/13924737) lists three variants, chosen from the model dropdown at the top right of the Create form. The same dropdown holds Custom Models and a selected Voice. Pick by how much control the request needs, not by tier.
 
 | Model | Use For | Access |
 | --- | --- | --- |
@@ -32,9 +32,10 @@ Use this list when a user brings v5.5 habits or recipes. Documented items come f
 | Inputs | Text and audio uploads | Songs, playlists, audio, images, video, voice memos, mashups, sample-and-isolate (documented) |
 | Personas | Personas button | Voices; older Personas convert and can be upgraded to v6 (reported); see `personas.md` |
 | Consistency | Prompt only | Max Mode toggle trades credits for consistency (documented) |
-| Training data | Unstated | Suno says v6 was trained on newly licensed data with label partners. Mention only if the user asks about provenance |
+| Training data | Unstated | Suno says v6 was developed with industry partners including Warner Music Group, BMG, and Believe. Mention only if the user asks about provenance |
+| Spoken audio | Spoken tags inside a song | A separate Speech (beta) mode generates narration and its soundtrack together; see `suno-speech.md` (documented) |
 
-Old v5.5 prompts were tuned to a model that no longer exists. Rebuild from the song's intent rather than porting a recipe word for word.
+Suno's FAQ says v6 "understands more of the language and building blocks musicians use" and that in Simple mode "you don't need to know which tool to reach for (like Cover, Remix, Extend)... The model figures out the workflow." Old v5.5 prompts were tuned to a model that no longer exists. Rebuild from the song's intent rather than porting a recipe word for word.
 
 ## Surfaces
 
@@ -61,6 +62,8 @@ A title identifies the song. Do not claim it controls mood or generation behavio
 v6 accepts more than text. The [v6 FAQ](https://help.suno.com/en/articles/13924481) and the [v6 release notes](https://suno.com/release-notes/introducing-v6) document referencing multiple inputs in one request: Suno songs, playlists, audio uploads, images, and video, plus starting from a voice memo. Suno frames this as Simple mode work.
 
 Also documented as new in v6: building a mashup from several sources in one request, and sampling then isolating part of a track to build a new beat around it (Suno's example: sample the riff at 0:45, isolate the guitar, build a beat around it).
+
+Suno's own example requests show the expected phrasing: "Change the chorus so it's sung by a gospel choir", "Take the vocals from x, drums from y, and add new lyrics about losing control, make it 80s synthwave", "Make a song that feels like midnight on a rooftop", "Make a song based on this image, this audio, and my journal entry", and "Change the lyric from 'love' to 'light.'" When the user wants one of these, write the request in that plain, specific form: name each source, what to take from it, and the target.
 
 Suno documents that these inputs exist but not what the controls are called, which mode holds each one, or how many are allowed. Only [Upload Audio](https://help.suno.com/en/articles/6141569) has a confirmed label. Describe the intent and let the user find the control; do not invent a field name for the skill to tell them to fill. Image and video inputs raise the credit cost by an amount Suno does not publish.
 
@@ -127,7 +130,7 @@ Keep the source clip and other controls fixed while comparing. A selected Voice,
 
 ## Max Mode
 
-Max Mode is an Advanced toggle that spends more credits per generation in exchange for consistency and fidelity. The [v6 FAQ](https://help.suno.com/en/articles/13924481) names its cases: songs past the short end of the range, covers that must stay close to the source, style transfer between songs, and holding vocals and style steady across a full track. Community reports put the cost at double (20 credits per two-song generation instead of 10), which halves a Pro plan's song count; treat the multiplier as reported and the direction as certain. Suno reportedly recommends Max Mode when a Voice is selected.
+Max Mode is an Advanced toggle that spends more credits per generation in exchange for consistency and fidelity. The [v6 FAQ](https://help.suno.com/en/articles/13924481) names its cases: songs past the short end of the range, covers that must stay close to the source, style transfer between songs, and holding vocals and style steady across a full track. Community reports put the cost at double (20 credits per two-song generation instead of 10), which halves a Pro plan's song count; treat the multiplier as reported and the direction as certain. Suno reportedly recommends Max Mode when a Voice is selected; its Voices article separately advises a high Audio Influence.
 
 Leave it off while calibrating a brief. Getting standard v6 to follow the prompt is a prompt problem, and paying double to discover that wastes credits. Turn it on once the direction is right and the remaining fault is consistency or fidelity. A baseline generation is two songs for 10 credits; image and video inputs add cost.
 
@@ -141,7 +144,7 @@ Tempo, key, chord progressions, bar counts, and specific vocalist hand-offs in t
 
 ## Personalization
 
-Suno separates [Voices](https://help.suno.com/en/articles/11362369), [Custom Models](https://help.suno.com/en/articles/11362497), and [My Taste](https://help.suno.com/en/articles/11362561). Voices and Style Personas are one surface: Style Personas sits in the Voices menu and opens `Create a Voice` (Beta), taking a recorded or uploaded sample, with converted older Personas reachable through `Select from library`. See `personas.md`. Keep the selected Voice's identity separate from delivery directions such as restrained, whispered, or belted. A text instruction does not select or train a Voice. Custom Models provide a personalized model basis and now run on v6; existing models were carried over, so keep the requested song direction coherent with the model rather than assuming its earlier behavior. Community trackers report Custom Model creation as a Beta for Pro and Premier, costing 100 credits, needing at least 6 uploaded songs with 24 or more suggested, and private to the account. Suno has not stated whether a model trained today fine-tunes the v6 base; do not claim either way. With a Custom Model selected, prompt around the song's intent and avoid piles of conflicting genre tags.
+Suno separates [Voices](https://help.suno.com/en/articles/11362369), [Custom Models](https://help.suno.com/en/articles/11362497), and [My Taste](https://help.suno.com/en/articles/11362561). Voices and Style Personas are one surface: Style Personas sits in the Voices menu and opens `Create a Voice` (Beta), taking a recorded or uploaded sample, with converted older Personas reachable through `Select from library`. See `personas.md`. Keep the selected Voice's identity separate from delivery directions such as restrained, whispered, or belted. A text instruction does not select or train a Voice. Custom Models provide a personalized model basis and now run on v6; existing models were carried over, so keep the requested song direction coherent with the model rather than assuming its earlier behavior. Suno's [what's new in v6](https://help.suno.com/en/articles/13924801) says Custom Models "fine-tune v6 on your own tracks", and the FAQ says older custom models were upgraded automatically so v6 powers them. The [Custom Models article](https://help.suno.com/en/articles/11362497) gives Pro and Premier access, up to three models, at least six songs the user owns the rights to, about 2-5 minutes to build, and creation from `Create Custom Model` in the model dropdown. It still calls them private, but the 2026-10-15 [release notes](https://suno.com/release-notes) added shareable custom models with 2x the inputs for Premier users, alongside team workspaces for Pro and Premier; follow the newer release note and confirm on the user's screen. A 100-credit creation cost and a 24-song suggestion are community reports only. With a Custom Model selected, prompt around the song's intent and avoid piles of conflicting genre tags.
 
 My Taste personalizes the Magic Wand, the icon at the top right of the Styles box that writes a detailed style description from the user's listening and creation habits. It is on by default and can be viewed, edited, or disabled from the account menu. For comparisons, retain the exact final Style text rather than invoking the wand again between takes, and hold Variety at 0 so the retained text survives. If suggestions repeatedly pull toward a familiar palette, review personalization settings and rewrite the direction deliberately.
 

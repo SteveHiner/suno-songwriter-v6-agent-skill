@@ -118,6 +118,8 @@ Keep it to a few lines. Do not narrate the whole Studio feature set unless the u
 
 ## Studio 2.0: When Text Is Not Enough
 
+Later Studio releases (read 2026-11-04 in the [release notes](https://suno.com/release-notes)): more accurate MIDI-to-audio transcription and chat-bar MIDI prompting (2026-09-17); better downbeat detection, shift-drag timestretch, and curved fades (2026-10-08); and a Clip Settings sidebar plus a Clip Info panel showing a clip's lyrics, style tags, and stem separation, fine pitch in semitones and cents, and auto-stretch for added audio (2026-10-29). The in-Studio Chat assistant can generate stems and plugins, rename tracks, move many faders, and add effects across tracks from plain requests. Studio remains Premier-only. When a user wants a Studio change, phrase it as a short Chat request rather than a click path the skill cannot verify.
+
 Suno's [Studio 2.0 announcement](https://suno.com/blog/studio-2), released 2026-08-13 and checked 2026-09-05, describes MIDI import/recording/editing, MIDI clips as generation prompts, automation, audio effects, and a beta chat bar. The announcement lists Premier access; check the user's current entitlement before prescribing it.
 
 - Exact motif or bass rhythm: use a MIDI clip or recorded reference to communicate notes and timing.

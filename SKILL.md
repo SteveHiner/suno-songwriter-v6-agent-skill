@@ -10,7 +10,7 @@ Create songs and prompts around a clear hook, musical identity, and playable str
 
 ## Workflow
 
-1. Identify the requested deliverable: full vocal song, focused lyric edit, instrumental cue, settings, sample, artwork, persona, or album. Return only what the user needs. A chorus rewrite does not need a full song package.
+1. Identify the requested deliverable: full vocal song, focused lyric edit, instrumental cue, spoken piece, settings, sample, artwork, persona, or album. Return only what the user needs. A chorus rewrite does not need a full song package.
 2. Preserve the user's theme, language, supplied wording they want kept, and musical constraints. Infer minor gaps and label material assumptions; ask only when a missing choice changes the work substantially.
 3. Choose a song promise and hook or motif. For a full song, map section jobs and contrast before drafting. Use `references/song-matrix.md` when the brief needs a plan, alternatives, a duration budget, or stronger section movement. Keep the matrix internal unless requested or useful to review.
 4. Draft for the chosen genre and delivery. Use `references/genre-songwriting.md` to select relevant family guidance; for mixed styles, use `references/genre-fusion.md` to allocate groove, phrasing, harmony, form, and timbre across influences. When the brief needs musical detail, choose harmonic motion, melodic contour, groove, and instrumental roles using the relevant references; translate them into a few audible directions rather than adding theory to every output. Revise the hook, natural stress, breath space, and section movement before formatting. A shorter chorus can lift through space, register, rhythm, or harmony; it need not always get louder.
@@ -28,6 +28,7 @@ Do not output em dashes (U+2014) or en dashes (U+2013) anywhere in the response,
 | Focused edit or analysis | The requested passage, revision, or analysis; preserve unrelated material |
 | Settings only | Relevant prompt fields and available controls; no invented lyrics |
 | Song plan or matrix | A compact section/decision table; lyrics only if requested |
+| Spoken piece over music (Speech beta) | `Title`, `Script`, `Voice`, `Music` |
 | Individual sample | `Sound`, `Type`; `BPM` and `Key` for musical material; variations when useful |
 | Artwork | `Cover Concept`, `Image Prompt`, optional `Motion Prompt`, `Settings`; append to a song if both were requested |
 | Persona or album | The spec and path described in the relevant reference |
@@ -90,6 +91,7 @@ Load only files that change a decision for this request. `references/templates.m
 | Non-lyric tracks, game loops, score | `references/instrumental.md` |
 | Anime OP/ED, TV themes, trailers, edit lengths | `references/screen-music.md` |
 | Sound effects and individual samples | `references/suno-sounds.md` |
+| Spoken narration over music (Speech beta) | `references/suno-speech.md` |
 | Cover images and animated covers | `references/cover-art.md` |
 | Translation, adaptation, dialect, script | `references/multilingual.md` |
 | Choosing a palette without repeating defaults | `references/style-selection.md` |
@@ -111,3 +113,5 @@ Load only files that change a decision for this request. `references/templates.m
 Persona specs live in the user's `personas/<slug>.md`; album specs in `albums/<slug>.md`. Read an existing spec before writing its songs, then update its song log or tracklist as part of the requested work. Preserve existing content; confirm replacement before overwriting a spec. A Markdown persona is a creative brief, not a trained Suno Voice or a guarantee of the same rendered singer.
 
 For other music tools, retain the song plan and musical direction but map fields to that tool. Omit Suno-only controls. This skill prepares text and project specs; audio generation, image generation, uploads, and paid operations require an available tool and authorization for that action.
+
+Suno launched an official MCP server in beta on 2026-10-28 (`https://api.suno.com/mcp`, early access, all plans, signs in with the user's Suno account). When a Suno connector is actually present in the agent's tools, the agent can submit a finished package, start from an uploaded voice memo, or request covers, extensions, and mashups of library songs; results land in the user's library and spend the user's credits. Draft and review the package first, confirm the credit spend before submitting, and pass the same fields this skill produces. Without that tool, say it can be connected and return text only. Never claim a song was generated unless the tool call returned it.

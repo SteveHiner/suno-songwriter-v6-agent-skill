@@ -4,6 +4,10 @@ Use this reference to plan and maintain a cohesive **album or EP** (a set of son
 
 An album may be tied to a **persona** (`references/personas.md`); if so, link it and the persona's vocals, cadence, and lyrical fingerprint carry across every track.
 
+## Publishing On Suno
+
+The album file is a plan, not a Suno object. Since October 2026 Suno can publish a body of work as an album, notifying the creator's followers, and has a tutorial for converting a playlist into one; team workspaces (Pro and Premier) can share a song library with invited collaborators ([release notes](https://suno.com/release-notes), read 2026-11-04). When the tracks are finished, suggest publishing them as an album in the planned sequence. Do not claim the skill publishes anything.
+
 ## When To Use
 
 Triggers: "plan an album / EP / mixtape", "create an album concept", "I want a cohesive set of songs about <X>", "add a track to my album <name>", "write track 4 of <album>", "make a tracklist for...", "keep these songs consistent as an album", "sequence these into a record".
